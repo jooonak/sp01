@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java96.mapper.TodoMapper">
+	<select id="listPage" resultType="TodoDTO"> <!-- resultType - config.xml파일이 없으면 package부터 작성해야함-->
+		select * from tbl_todo where tno > 0 order by tno desc limit #{skip}, 10
+	</select>
+</mapper>
